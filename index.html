@@ -15,6 +15,10 @@
     function openApp(url) {
       window.location.href = url;
     }
+
+    function openForm() {
+      window.location.href = "https://forms.gle/6JJgsu37WDTeFMBF9";
+    }
   </script>
   <style>
     body {
@@ -26,10 +30,10 @@
       margin-bottom: 20px;
       font-size: 24px;
     }
-    .account-btn {
+    .account-btn, .form-btn {
       width: 90%;
       max-width: 400px;
-      margin: 20px auto;
+      margin: 10px auto;
       padding: 15px;
       font-size: 18px;
       background-color: #FFABC5;
@@ -39,8 +43,13 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .account-btn:hover {
+    .account-btn:hover, .form-btn:hover {
       background-color: #0056b3;
+    }
+    .instruction {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
     }
     .bank-container {
       display: grid;
@@ -88,6 +97,9 @@
   <!-- 계좌번호 복사 버튼 -->
   <button class="account-btn" onclick="copyAccount()">계좌번호 복사</button>
 
+  <!-- 입금 후 안내 -->
+  <div class="instruction">입금 후 폼을 작성해주세요!</div>
+
   <div class="bank-container">
     <!-- 토스뱅크 -->
     <div class="bank-item" onclick="openApp('supertoss://')">
@@ -100,7 +112,6 @@
       <img src="https://play-lh.googleusercontent.com/K1rBzVJjq9qtSxC2vkWIsp3GPtPOCwLPf1aCJ0tL0TvWdNcAKQKhYwjPMY90XJwyW-E=w480-h960-rw" alt="국민은행">
       <div class="bank-name">국민은행</div>
     </div>
-
 
     <!-- 신한은행 -->
     <div class="bank-item" onclick="openApp('shinhan-sr-ansimclick://')">
@@ -120,5 +131,9 @@
       <div class="bank-name">카카오뱅크</div>
     </div>
   </div>
+
+  <!-- 폼 작성하러 가기 버튼 -->
+  <button class="form-btn" onclick="openForm()">폼 작성하러 가기</button>
+
 </body>
 </html>
